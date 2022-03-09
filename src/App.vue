@@ -50,7 +50,12 @@
         @close="isEnvironmentFormVisible = false"
         @save="saveEnvironment"
       />
-      <UploadForm v-if="hasAddedEnvironments" />
+      <UploadForm
+        v-if="hasAddedEnvironments"
+        :bucketName="
+          this.environments[this.selectedEnvironmentIndex].bucketName
+        "
+      />
     </div>
   </section>
 </template>
